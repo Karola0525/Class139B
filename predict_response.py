@@ -16,12 +16,12 @@ import random
 import tensorflow
 from data_preprocessing import get_stem_words
 
-model = tensorflow.keras.models.load_model('./static/assets/model_files/chatbot_model.h5')
+model = tensorflow.keras.models.load_model('/content/Class139B/static/assets/model_files/chatbot_model.h5')
 
 # Archivos de datos para cargar.
-intents = json.loads(open('./static/assets/chatbot_corpus/intents.json').read())
-words = pickle.load(open('./static/assets/chatbot_corpus/words.pkl','rb'))
-classes = pickle.load(open('./static/assets/chatbot_corpus/classes.pkl','rb'))
+intents = json.loads(open('/content/Class139B/static/assets/chatbot_corpus/intents.json').read())
+words = pickle.load(open('/content/Class139B/static/assets/chatbot_corpus/words.pkl','rb'))
+classes = pickle.load(open('/content/Class139B/static/assets/chatbot_corpus/classes.pkl','rb'))
 
 
 def preprocess_user_input(user_input):
