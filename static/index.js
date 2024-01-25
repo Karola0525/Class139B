@@ -5,7 +5,7 @@ let predicted_emotion;
 
 $(document).ready(function () {
     $("#display_date").html(display_date)
-    $('#save_button').prop('disabled', true);
+  
     displayBot()
 })
 
