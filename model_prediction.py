@@ -7,7 +7,7 @@ from tensorflow.keras.preprocessing.sequence import pad_sequences
 from tensorflow.keras.models import load_model
 
 
-train_data = pd.read_csv("./static/assets/data_files/tweet_emotions.csv")   
+train_data = pd.read_csv("/content/Class139B/static/assets/data_files/tweet_emotions.csv")   
 
 training_sentences = []
 
@@ -15,7 +15,7 @@ for i in range(len(train_data)):
     sentence = train_data.loc[i, "content"]
     training_sentences.append(sentence)
 
-model = load_model("./static/assets/model_files/Tweet_Emotion.h5")
+model = load_model("/content/Class139B/static/assets/model_files/Tweet_Emotion.h5")
 
 vocab_size = 40000
 max_length = 100
@@ -28,19 +28,20 @@ tokenizer.fit_on_texts(training_sentences)
 
 # Hacer código y diccionario de URL para diferentes emociones.
 emo_code_url = {
-    "empty": [0, "./static/assets/emoticons/Empty.png"],
-    "sadness": [1, "./static/assets/emoticons/Sadness.png"],
-    "enthusiasm": [2, "./static/assets/emoticons/Enthusiastic.png"],
-    "neutral": [3, "./static/assets/emoticons/Neutral.png"],
-    "worry": [4, "./static/assets/emoticons/Worry.png"],
-    "surprise": [5, "./static/assets/emoticons/Surprise.png"],
-    "love": [6, "./static/assets/emoticons/Love.png"],
-    "fun": [7, "./static/assets/emoticons/Fun.png"],
-    "hate": [8, "./static/assets/emoticons/Hate.png"],
-    "happiness": [9, "./static/assets/emoticons/Happiness.png"],
-    "boredom": [10, "./static/assets/emoticons/Boredom.png"],
-    "relief": [11, "./static/assets/emoticons/Relief.png"],
-    "anger": [12, "./static/assets/emoticons/Anger.png"],
+    "empty": [0, "https://raw.githubusercontent.com/BYJUS-smah/PRO-1-4-C134-Codigo-referencia/main/static/assets/emoticons/Empty.png"],
+    "sadness": [1,"https://raw.githubusercontent.com/BYJUS-smah/PRO-1-4-C134-Codigo-referencia/main/static/assets/emoticons/Sadness.png" ],
+    "enthusiasm": [2, "https://raw.githubusercontent.com/BYJUS-smah/PRO-1-4-C134-Codigo-referencia/main/static/assets/emoticons/Enthusiastic.png"],
+    "neutral": [3, "https://raw.githubusercontent.com/BYJUS-smah/PRO-1-4-C134-Codigo-referencia/main/static/assets/emoticons/Neutral.png"],
+    "worry": [4, "https://raw.githubusercontent.com/BYJUS-smah/PRO-1-4-C134-Codigo-referencia/main/static/assets/emoticons/Worry.png"],
+    "surprise": [5, "https://raw.githubusercontent.com/BYJUS-smah/PRO-1-4-C134-Codigo-referencia/main/static/assets/emoticons/Surprise.png"],
+    "love": [6, "https://raw.githubusercontent.com/BYJUS-smah/PRO-1-4-C134-Codigo-referencia/main/static/assets/emoticons/Love.png"],
+    "fun": [7, "https://raw.githubusercontent.com/BYJUS-smah/PRO-1-4-C134-Codigo-referencia/main/static/assets/emoticons/Fun.png"],
+    "hate": [8, "https://raw.githubusercontent.com/BYJUS-smah/PRO-1-4-C134-Codigo-referencia/main/static/assets/emoticons/Hate.png"],
+    "happiness": [9, "https://raw.githubusercontent.com/BYJUS-smah/PRO-1-4-C134-Codigo-referencia/main/static/assets/emoticons/Happiness.png"],
+    "boredom": [10, "https://raw.githubusercontent.com/BYJUS-smah/PRO-1-4-C134-Codigo-referencia/main/static/assets/emoticons/Boredom.png"],
+    "relief": [11, "https://raw.githubusercontent.com/BYJUS-smah/PRO-1-4-C134-Codigo-referencia/main/static/assets/emoticons/Relief.png"],
+    "anger": [12, "https://raw.githubusercontent.com/BYJUS-smah/PRO-1-4-C134-Codigo-referencia/main/static/assets/emoticons/Anger.png"]
+    
 }
 
 def predict(text):
@@ -70,7 +71,7 @@ def predict(text):
 
 
 def show_entry():
-    day_entry_list = pd.read_csv("./static/assets/data_files/data_entry.csv")
+    day_entry_list = pd.read_csv("/content/Class139B/static/assets/data_files/data_entry.csv")
 
     day_entry_list = day_entry_list.iloc[::-1]
     
