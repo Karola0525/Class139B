@@ -20,7 +20,7 @@ pattern_word_tags_list = [] #lista del par de (['palabras', 'de', 'la', 'oració
 
 ignore_words = ['?', '!',',','.', "'s", "'m"]
 
-train_data_file = open('./static/assets/chatbot_corpus/intents.json').read()
+train_data_file = open('/content/Class139B/static/assets/chatbot_corpus/intents.json').read()
 intents = json.loads(train_data_file)
 
 def get_stem_words(words, ignore_words):
